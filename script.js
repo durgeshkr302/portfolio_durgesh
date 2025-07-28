@@ -45,7 +45,7 @@ function showDownloadNotification(message) {
     notification.style.opacity = '1';
   });
 
-  // Fade out and remove after 3 seconds
+  // Fade out and remove 3 seconds baad
   setTimeout(() => {
     notification.style.opacity = '0';
     notification.addEventListener('transitionend', () => {
@@ -102,7 +102,7 @@ document.querySelectorAll('button').forEach(button => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
-  // tagline Animate words one by one
+  // main tagline Animation words one by one
   const taglineSpans = document.querySelectorAll('h1 > div > span');
   taglineSpans.forEach(span => {
     span.style.opacity = '0'; // hide initially
@@ -143,7 +143,7 @@ window.addEventListener('DOMContentLoaded', () => {
       path.style.animation = 'drawLine 2s ease forwards';
     });
 
-    // slide animation in social icons
+    // right to left animation social icons animation 
     const socialIcons = document.querySelector('.social-icons');
     if (socialIcons) {
       socialIcons.classList.add('slide-in');

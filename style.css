@@ -199,6 +199,63 @@ h1 strong {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Added for pseudo-element positioning */
+  z-index: 0; /* Ensure stacking context */
+  overflow: hidden; /* Hide overflow for shine animation */
+}
+
+.btn-resume::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  pointer-events: none;
+  animation: shineSweep 2.5s ease-in-out infinite;
+  z-index: 2;
+}
+
+@keyframes shineSweep {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+/* Glowing circular animation around resume button */
+.btn-resume::before {
+  content: none;
+}
+
+@keyframes glowOrbit {
+  0% {
+    transform: none;
+    box-shadow: none;
+  }
+  25% {
+    box-shadow: none;
+  }
+  50% {
+    transform: none;
+    box-shadow: none;
+  }
+  75% {
+    box-shadow: none;
+  }
+  100% {
+    transform: none;
+    box-shadow: none;
+  }
 }
 .btn-resume:hover {
   background-color: #10b981;
